@@ -1,10 +1,16 @@
-"# CapstoneS20-63" 
+Capstone S20-63 Project: H.A.N.D. (Hand Augmented Narration Device)
+
+
 To install properly, you will need some packages related to python and network communications
 
-1. Accelerometer setup
+
+## H2 1. Accelerometer setup
+    Run the following pip command on the Pi
+        ```bash
+        sudo pip3 install adafruit-circuitpython-lsm6ds```
 
 
-2. MQTT protocol
+## H2 2. MQTT protocol
     This protocol is used to connect the Raspberry Pi to our PC in a method that allows multiple devices to connect to the PC for communications. The PC is able to listen for any incoming messages sent at port 1883 (default) and all Raspberry Pis would send data at that port
 
     To install:
@@ -23,16 +29,19 @@ To install properly, you will need some packages related to python and network c
             g. Select the network type as you see fit (I chose only private networks) and click Next.
             h. Name the rule something meaningful and click Finish.
         5. Download the paho package to use mqtt in Python with the commands:
-            python -m pip install paho-mqtt
+            ```bash
+            python -m pip install paho-mqtt```
 
         On Raspberry Pi (taken from https://pastebin.com/Etn59ppp)
         1. Install Mosquitto
+            ```bash
             sudo apt-get install mosquitto -y
-            sudo apt-get install mosquitto-clients
+            sudo apt-get install mosquitto-clients```
  
         2. Configure Mosquitto.
             a. Run the following
-            sudo nano /etc/mosquitto/mosquitto.conf
+            ```bash
+            sudo nano /etc/mosquitto/mosquitto.conf```
  
             b. Delete the contents and paste the following:
             # Place your local configuration in /etc/mosquitto/conf.d/
@@ -52,16 +61,20 @@ To install properly, you will need some packages related to python and network c
             listener 1883
             
         3. Setup Mosquitto credentials (Enter any username and password and make sure you remember it)
-        sudo mosquitto_passwd -c /etc/mosquitto/pwfile TYPE_YOUR_USERNAME_HERE
+        ```bash
+        sudo mosquitto_passwd -c /etc/mosquitto/pwfile TYPE_YOUR_USERNAME_HERE```
         
         4. Test the Mosquitto by subscribing to a topic
-        mosquitto_sub -d -u MOSQUITTO_USERNAME -P MOSQUITTO_PASSWORD -t dev/test
+        ```bash
+        mosquitto_sub -d -u MOSQUITTO_USERNAME -P MOSQUITTO_PASSWORD -t dev/test```
 
         5. Install the paho package on this device
-            sudo pip3 install paho-mqtt
+        ```bash
+        sudo pip3 install paho-mqtt```
     
-3. Keyboard inputs
+## H2 3. Keyboard inputs
     To translate sensor input into keyboard input, we used the pynput library:
-        python -m pip install pynput
+    ```bash
+    python -m pip install pynput```
     
     Information about what types of keyboard inputs we can bind can be found here: https://pynput.readthedocs.io/en/latest/index.html
