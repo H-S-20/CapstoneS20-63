@@ -1,0 +1,11 @@
+-VDD (Pin 16) wire this to 3.3V
+-VREF (Pin 15) wire this to 3.3V
+-AGND (Pin 14) wire this to ground
+-CLK (Pin 13) wire this to GPIO11 (Pin 23/SCLK)
+-DOUT (Pin 12) wire this to GPIO9 (Pin 21/MISO)
+-DIN (Pin 11) wire this to GPIO10 (Pin 19/MOSI)
+-CS (Pin 10) wire this to GPIO8 (Pin 24/CE0)
+-DGND (Pin 9) wire this to GROUND
+-Wire the pressure pad to 3v3
+-Wire a resistor from GROUND to CH0
+-Also, wire CH0 to the pressure pad
