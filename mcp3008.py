@@ -28,3 +28,6 @@ try:
         time.sleep(delay)
 except KeyboardInterrupt:
     pass
+
+#From here, I would make an if statement that opens the slide file when the flex sensor resistance value is over a set threshold.
+#This is more easier done by trial and error
