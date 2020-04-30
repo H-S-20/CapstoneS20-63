@@ -1,16 +1,16 @@
-Capstone S20-63 Project: H.A.N.D. (Hand Augmented Narration Device)
+# Capstone S20-63 Project: H.A.N.D. (Hand Augmented Narration Device)
 
 
 To install properly, you will need some packages related to python and network communications
 
 
-1. Accelerometer setup
+## 1. Accelerometer setup
 ----------------------
 Run the following pip command on the Pi
     sudo pip3 install adafruit-circuitpython-lsm6ds
 
 
-2. MQTT protocol
+## 2. MQTT protocol
 ----------------
 This protocol is used to connect the Raspberry Pi to our PC in a method that allows multiple devices to connect to the PC for communications. The PC is able to listen for any incoming messages sent at port 1883 (default) and all Raspberry Pis would send data at that port.
 
@@ -67,9 +67,15 @@ This protocol is used to connect the Raspberry Pi to our PC in a method that all
         5. Install the paho package on this device
         sudo pip3 install paho-mqtt
     
-3. Keyboard inputs
+## 3. Keyboard inputs
 ------------------
 To translate sensor input into keyboard input, we used the pynput library:
     python -m pip install pynput
     
 Information about what types of keyboard inputs we can bind can be found here: https://pynput.readthedocs.io/en/latest/index.html
+
+## 4. Running the program
+----------------------
+Simply run receiver.py on the computer you wish to present from and sender.py from the device you wish to send hand gestures from.
+The UI allows you to adjust bindings based off of which dropdown was selected. Example gestures have been shown.
+Please ensure that you are meeting speed requirements when performing hand gestures to ensure proper registration.

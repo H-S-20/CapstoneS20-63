@@ -182,9 +182,6 @@ options6.set("default")
 binding6 = OptionMenu(root, options6, "default", "left", "right", "b", "w", "a", "s", "volume up", "volume down")
 binding6.pack()
 
-setBindings = Button(root, text = "Apply Changes", command = update_preferences)
-setBindings.pack()
-
 startButton = Button(root, text = "Start")
 startButton.pack()
 
